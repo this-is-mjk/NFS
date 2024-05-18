@@ -1,6 +1,6 @@
 // structs1.rs
 //
-// I AM NOT DONE
+// DONE
 
 struct ColorClassicStruct {
     red: i32,
@@ -19,10 +19,10 @@ mod tests {
 
     #[test]
     fn classic_c_structs() {
-        let green = ColorClassicStruct{
-            red = 0,
-            green = 255,
-            blue = 0,
+        let green = ColorClassicStruct {
+            red: 0,
+            green: 255,
+            blue: 0,
         };
 
         assert_eq!(green.red, 0);
@@ -41,7 +41,7 @@ mod tests {
 
     #[test]
     fn unit_structs() {
-        let unit_like_struct = unit_like_struct;
+        let unit_like_struct = UnitLikeStruct;
         let message = format!("{:?}s are fun!", unit_like_struct);
 
         assert_eq!(message, "UnitLikeStructs are fun!");
