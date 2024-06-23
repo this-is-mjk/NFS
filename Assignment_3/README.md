@@ -1,3 +1,8 @@
+# using the templet
+
+i have made myfunctions to make all the required functions
+
+
 # Distributed File System
 
 In this assignment, you will be developing a working _distributed file
