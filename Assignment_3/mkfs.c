@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
         usage();
 
     unsigned char *empty_buffer;
-    empty_buffer = calloc(UFS_BLOCK_SIZE, 1);
+    empty_buffer = (unsigned char *)(calloc(UFS_BLOCK_SIZE, 1));
     if (empty_buffer == NULL)
     {
         perror("calloc");
@@ -136,10 +136,10 @@ int main(int argc, char *argv[])
     //
     // need to allocate first inode in inode bitmap
     //
-    typedef struct
-    {
-        unsigned int bits[UFS_BLOCK_SIZE / sizeof(unsigned int)];
-    } bitmap_t;
+    // typedef struct
+    // {
+    //     unsigned int bits[UFS_BLOCK_SIZE / sizeof(unsigned int)];
+    // } bitmap_t;
     assert(sizeof(bitmap_t) == UFS_BLOCK_SIZE);
 
     bitmap_t b;
@@ -202,7 +202,6 @@ int main(int argc, char *argv[])
 
     rc = pwrite(fd, &parent, UFS_BLOCK_SIZE, s.data_region_addr * UFS_BLOCK_SIZE);
     assert(rc == UFS_BLOCK_SIZE);
-
 
     if (visual)
     {

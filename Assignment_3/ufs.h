@@ -25,6 +25,10 @@ typedef struct
 {
     dir_ent_t entries[128];
 } dir_block_t;
+typedef struct
+    {
+        unsigned int bits[UFS_BLOCK_SIZE / sizeof(unsigned int)];
+    } bitmap_t;
 
 // presumed: block 0 is the super block
 typedef struct __super
